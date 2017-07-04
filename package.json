@@ -1,0 +1,15 @@
+{
+  "name": "Sass-Mixins",
+  "version": "1.0.0",
+  "description": "Creating Sass Mixins.",
+  "main": "index.js",
+  "author": "Modern Media",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^7.1.1",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
