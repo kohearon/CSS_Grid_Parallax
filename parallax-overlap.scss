@@ -1,11 +1,3 @@
-// @for $i from 1 through 12{
-//   .overlap-on-right--#{$i} {
-//     grid-column-start: #{$i}
-//   }
-//   .span-#{$i} {
-//     grid-column-end: span #{$i}
-//   }
-// }
 
 /* Main Container To House Parallax Content */
 .parallax-container{
@@ -14,12 +6,28 @@
   grid-column-gap: 20px;
   grid-auto-rows: 50px;
 
+  /* With Main Content Starting on Left */
   &__main-content {
     grid-column-start: 1;
 
     @for $i from 1 through 12 {
       &--span-#{$i} {
         grid-column-end: #{$i}
+      }
+    }
+  }
+
+  /* Secondary Content Starting On Right May
+  ** Start And Span Any Number
+  **/
+  &__secondary-content{
+    @for $i from 1 through 12 {
+      &--start-#{$i}{
+        grid-column-start: #{$i}
+      }
+
+      &--span-#{$i} {
+        grid-column-end: span #{$i};
       }
     }
   }
