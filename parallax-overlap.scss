@@ -1,0 +1,8 @@
+@for $i from 1 through 12{
+  .overlap-on-right--#{$i} {
+    grid-column-start: #{$i}
+  }
+  .span-#{$i} {
+    grid-column-end: span #{$i}
+  }
+}
