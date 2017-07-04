@@ -18,9 +18,22 @@
   }
 
   /* Secondary Content Starting On Right May
-  ** Start And Span Any Number
+  ** Start And Span Any Number. Additionally
+  ** The Container May Be Black With White Text,
+  ** or White With Black Text.
   **/
-  &__secondary-content{
+  &__secondary-content {
+
+    &--black-background {
+      background: rgba(0,0,0,0.70);
+      color: #FFFFFF;
+    }
+
+    &--white-background {
+      color: #434343;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    }
+
     @for $i from 1 through 12 {
       &--start-#{$i}{
         grid-column-start: #{$i}
@@ -28,6 +41,10 @@
 
       &--span-#{$i} {
         grid-column-end: span #{$i};
+      }
+
+      &--inital-row-position-#{$i} {
+        grid-row-start: #{$i}
       }
     }
   }

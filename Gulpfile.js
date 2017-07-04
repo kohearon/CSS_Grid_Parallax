@@ -5,7 +5,7 @@ var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 
 var presets = [
-  autoprefixer({browsers: ['last 1 version']}),
+  autoprefixer({browsers: ['last 3 versions']}),
   cssnano()
 ];
 
