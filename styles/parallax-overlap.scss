@@ -9,17 +9,37 @@
 
   /* With Main Content Starting on Left */
   &__main-content {
-    grid-column-start: 1;
     grid-row-start: 1;
 
-    @for $i from 1 through 12 {
-      &--col-span-#{$i} {
-        grid-column-end: span #{$i}
+    &--left {
+      grid-column-start: 1;
+
+      @for $i from 1 through 12 {
+        &-col-span-#{$i} {
+          grid-column-end: span #{$i}
+        }
       }
+    }
+
+    @for $i from 1 through 12 {
       &--row-span-#{$i} {
         grid-row-end: span #{$i}
       }
     }
+
+    &--right{
+      grid-column-end: 12;
+
+      @for $i from 1 through 12 {
+        &-col-span-#{$i} {
+          grid-column-start: 12 - #{$i}
+        }
+        &-row-span-#{$i} {
+          grid-row-start: span #{$i}
+        }
+      }
+    }
+
   }
 
   /* Secondary Content Starting On Right May
