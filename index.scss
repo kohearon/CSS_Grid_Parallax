@@ -8,4 +8,19 @@
 **
 ** 2) Rows Shall Be 50px High.
 */
-@import "parallax-overlap";
+@import "styles/parallax-overlap";
+
+/* Just For Examples */
+body {
+  height: 2000px;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.parallax-container:nth-last-child(n+1){
+  margin-top: 50px;
+}
+
+.parallax-container__secondary-content{
+  padding: 25px 50px;
+}
