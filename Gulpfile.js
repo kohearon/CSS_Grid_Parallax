@@ -50,7 +50,8 @@ gulp.task('html', function(){
 
 gulp.task('watch', function(){
   gulp.watch('*.scss', ['styles']);
-  gulp.watch('*.js', ['scripts']);
+  gulp.watch(['*.js', 'scripts/*.js'], ['scripts']);
+  gulp.watch('index.html', ['html']);
 });
 
 gulp.task('default', ['styles', 'scripts','html', 'watch']);
