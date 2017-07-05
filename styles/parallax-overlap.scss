@@ -7,10 +7,16 @@
   grid-column-gap: 20px;
   grid-auto-rows: 50px;
 
-  /* With Main Content Starting on Left */
   &__main-content {
     grid-row-start: 1;
 
+    @for $i from 1 through 12 {
+      &--row-span-#{$i} {
+        grid-row-end: span #{$i}
+      }
+    }
+
+    /* With Main Content Starting on Left */
     &--left {
       grid-column-start: 1;
 
@@ -21,12 +27,7 @@
       }
     }
 
-    @for $i from 1 through 12 {
-      &--row-span-#{$i} {
-        grid-row-end: span #{$i}
-      }
-    }
-
+    /* With Main Content Starting On Right */
     &--right{
       grid-column-end: 12;
 
@@ -34,12 +35,8 @@
         &-col-span-#{$i} {
           grid-column-start: 12 - #{$i}
         }
-        &-row-span-#{$i} {
-          grid-row-start: span #{$i}
-        }
       }
     }
-
   }
 
   /* Secondary Content Starting On Right May
