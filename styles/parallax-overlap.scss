@@ -29,11 +29,11 @@
 
     /* With Main Content Starting On Right */
     &--right{
-      grid-column-end: 12;
+      grid-column-end: 13;
 
       @for $i from 1 through 12 {
         &-col-span-#{$i} {
-          grid-column-start: 12 - #{$i}
+          grid-column-start: calc(13 - #{$i});
         }
       }
     }
