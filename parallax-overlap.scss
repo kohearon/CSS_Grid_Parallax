@@ -9,10 +9,14 @@
   /* With Main Content Starting on Left */
   &__main-content {
     grid-column-start: 1;
+    grid-row-start: 1;
 
     @for $i from 1 through 12 {
-      &--span-#{$i} {
-        grid-column-end: #{$i}
+      &--col-span-#{$i} {
+        grid-column-end: span #{$i}
+      }
+      &--row-span-#{$i} {
+        grid-row-end: span #{$i}
       }
     }
   }
@@ -23,6 +27,7 @@
   ** or White With Black Text.
   **/
   &__secondary-content {
+    z-index: 1;
 
     &--black-background {
       background: rgba(0,0,0,0.70);
@@ -30,22 +35,28 @@
     }
 
     &--white-background {
+      background: #FFFFFF;
       color: #434343;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
     }
 
     @for $i from 1 through 12 {
-      &--start-#{$i}{
+      &--col-start-#{$i}{
         grid-column-start: #{$i}
       }
 
-      &--span-#{$i} {
+      &--col-span-#{$i} {
         grid-column-end: span #{$i};
       }
 
-      &--inital-row-position-#{$i} {
+      &--row-start-#{$i} {
         grid-row-start: #{$i}
       }
+
+      &--row-span-#{$i} {
+        grid-row-end: span #{$i}
+      }
+
     }
   }
 }
