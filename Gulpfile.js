@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
 
 /* Styles */
 var sass = require('gulp-sass');
@@ -6,15 +7,15 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var presets = [
-  autoprefixer({browsers: ['last 3 versions']}),
+  autoprefixer({browsers: ['last 2 versions']}),
   cssnano()
 ];
 
 /* Javascript */
 var source = require('vinyl-source-stream');
 var browserify = require('browserify')
-var buffer = require("vinyl-buffer");
-var gutil = require("gulp-util");
+var buffer = require('vinyl-buffer');
+var gutil = require('gulp-util');
 
 /* Minification */
 var htmlmin = require('gulp-htmlmin');
@@ -54,4 +55,13 @@ gulp.task('watch', function(){
   gulp.watch('index.html', ['html']);
 });
 
-gulp.task('default', ['styles', 'scripts','html', 'watch']);
+gulp.task('default', ['styles', 'scripts','html', 'watch'], function(){
+
+  /* Serve Files From The Dist Folder */
+  browserSync.init({
+    server: {
+    baseDir: "dist/"
+    }
+  });
+
+});
