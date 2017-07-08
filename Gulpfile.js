@@ -28,6 +28,12 @@ gulp.task('styles', function(){
     .pipe(gulp.dest('dist/'))
 });
 
+/* Reload Browser After Completion of Styles Task */
+gulp.task('styles-watch', ['styles'], function (done) {
+    browserSync.reload();
+    done();
+});
+
 gulp.task('scripts', function(){
   var b = browserify({
     entries: 'index.js',
@@ -41,6 +47,12 @@ gulp.task('scripts', function(){
    .pipe(gulp.dest('dist/'))
 });
 
+/* Reload Browser After Completeion of Javascript Tasks */
+gulp.task('scripts-watch', ['scripts'], function (done) {
+    browserSync.reload();
+    done();
+});
+
 gulp.task('html', function(){
   return gulp.src('index.html')
     .pipe(htmlmin({
@@ -49,13 +61,13 @@ gulp.task('html', function(){
     .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('watch', function(){
-  gulp.watch(['styles/*.scss', '*.scss'], ['styles']);
-  gulp.watch(['*.js', 'scripts/*.js'], ['scripts']);
-  gulp.watch('index.html', ['html']);
+/* Reload Browser After HTML Changes */
+gulp.task('html-watch', ['html'], function (done) {
+    browserSync.reload();
+    done();
 });
 
-gulp.task('default', ['styles', 'scripts','html', 'watch'], function(){
+gulp.task('default', ['styles', 'scripts','html'], function(){
 
   /* Serve Files From The Dist Folder */
   browserSync.init({
@@ -63,5 +75,10 @@ gulp.task('default', ['styles', 'scripts','html', 'watch'], function(){
     baseDir: "dist/"
     }
   });
+
+  /* Watching Tasks */
+  gulp.watch(['styles/*.scss', '*.scss'], ['styles-watch']);
+  gulp.watch(['*.js', 'scripts/*.js'], ['scripts-watch']);
+  gulp.watch('index.html', ['html-watch']);
 
 });
