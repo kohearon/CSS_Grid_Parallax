@@ -4,5 +4,5 @@ var parallaxUp = require('./scripts/parallax-up');
 
 document.addEventListener('scroll', function(){
 
-  parallaxUp('.parallax-container__secondary-content', 0.05);
+  parallaxUp('.parallax-container__secondary-content', 0.05, 40);
 })

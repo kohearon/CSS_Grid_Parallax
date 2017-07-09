@@ -3,11 +3,11 @@
 ** And Shall Apply Said Parallax Effect Upon The User Scrolling To All Items
 ** With The Said Class
 */
-module.exports = function parallaxUp(parallaxItemClass,speedFactor){
+module.exports = function parallaxUp(parallaxItemClass,speedFactor,initialOffset){
 
   /* Get Position of Top of Image, Top of User's Window */
   var topOfPage = window.pageYOffset;
   document.querySelectorAll(parallaxItemClass).forEach( function(parallaxItem) {
-    parallaxItem.style.transform = 'translateY(' + (-speedFactor * topOfPage) + 'px)';
+    parallaxItem.style.transform = 'translateY(' + ( (-speedFactor * topOfPage) - initialOffset) + 'px)';
   })
 }
