@@ -2,6 +2,9 @@
 /* Main Container To House Parallax Content */
 .parallax-container{
   display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
 
   &__main-content {
     flex-grow: 0;
@@ -14,6 +17,18 @@
   */
   &__secondary-content {
     z-index: 1;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 25%;
+    height: 75%;
+
+    &--right {
+      margin-left: -25%;
+    }
+
+    &--left {
+      margin-right: -25%;
+    }
 
     &--black-background {
       background: rgba(0,0,0,0.70);

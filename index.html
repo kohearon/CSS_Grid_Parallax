@@ -9,17 +9,18 @@
   </head>
   <body>
 
-    <h1 style="text-align:center; font-size:60px;">Generic Parallax Examples</h1>
+    <h1>Generic Parallax Examples</h1>
 
     <!-- White Background Main Content on Left Example -->
     <div class="parallax-container">
 
       <div class="parallax-container__main-content">
-        <img src="https://unsplash.it/780/500/?image=350"/>
+        <img class="responsive-image responsive-image--left" src="https://unsplash.it/780/500/?image=350"/>
       </div>
 
       <div class="parallax-container__secondary-content
-      parallax-container__secondary-content__white-background">
+      parallax-container__secondary-content--right
+      parallax-container__secondary-content--white-background">
 
         <h2>SHAKING UP SNACKING</h2>
         <p>
@@ -33,21 +34,11 @@
     </div> <!-- White Background Main Content on Left Example -->
 
     <!-- White Background Main Content on Right Example -->
-    <!-- <div class="parallax-container">
-
-      <div class="parallax-container__main-content
-      parallax-container__main-content--right
-      parallax-container__main-content--right-col-span-8
-      parallax-container__main-content--row-span-10">
-        <img class="responsive-image" src="https://unsplash.it/780/500/?image=10"/>
-      </div>
+    <div class="parallax-container">
 
       <div class="parallax-container__secondary-content
       parallax-container__secondary-content--white-background
-      parallax-container__secondary-content--col-start-2
-      parallax-container__secondary-content--col-span-5
-      parallax-container__secondary-content--row-start-6
-      parallax-container__secondary-content--row-span-5">
+      parallax-container__secondary-content--left">
 
         <h2>SHAKING UP SNACKING</h2>
         <p>
@@ -58,7 +49,11 @@
 
       </div>
 
-    </div> <!-- White Background Main Content on Right Example --> -->
+      <div class="parallax-container__main-content">
+        <img class="responsive-image responsive-image--right" src="https://unsplash.it/780/500/?image=10"/>
+      </div>
+
+    </div> <!-- White Background Main Content on Right Example -->
 
     <!-- Black Background Main Content on Left Example -->
     <!-- <div class="parallax-container">
@@ -90,7 +85,7 @@
 
     </div> <!-- Black Background Main Content on Left Example -->
 
-    <!-- Black Background Main Content on Right Example --> -->
+    <!-- Black Background Main Content on Right Example -->
     <!-- <div class="parallax-container">
 
       <div class="parallax-container__main-content
@@ -118,7 +113,7 @@
 
       </div>
 
-    </div> <!-- Black Background Main Content on Right Example --> -->
+    </div> <!-- Black Background Main Content on Right Example -->
 
     <script type="text/javascript" src="index.js"></script>
   </body>
