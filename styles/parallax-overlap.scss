@@ -9,7 +9,6 @@
   &__main-content {
     flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: 75%;
   }
 
   /* The Container May Be Black With White Text,
@@ -24,11 +23,11 @@
     transform: translateY(-40px);
 
     &--right {
-      margin-left: -25%;
+      margin-left: -10%;
     }
 
     &--left {
-      margin-right: -25%;
+      margin-right: -10%;
     }
 
     &--black-background {
