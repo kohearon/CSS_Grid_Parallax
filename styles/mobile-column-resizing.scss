@@ -5,20 +5,20 @@
 */
 @media screen and (max-width: 768px){
 
-  @for $i from 1 through 12 {
+  .parallax-container {
+    flex-direction: column;
 
-    .parallax-container__secondary-content--col-start-#{$i} {
-      grid-column-start: calc(#{$i} - 1);
+    &--reverse-order-mobile {
+      flex-direction: column-reverse;;
     }
 
-    @if ( $i + 1 <= 12) {
-      .parallax-container__secondary-content--col-span-#{$i} {
-        grid-column-end: span calc(#{$i} + 1);
+    &__secondary-content {
+      &--right {
+        margin-left: 0;
       }
-    }
-
-    .parallax-container__secondary-content--row-span-#{$i} {
-      // grid-row-end: span calc(#{$i} + 1);
+      &--left {
+        margin-right: 0;
+      }
     }
   }
 }
