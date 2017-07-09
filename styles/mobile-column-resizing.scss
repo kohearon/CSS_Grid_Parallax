@@ -1,0 +1,24 @@
+/* Secondary Text Content Place To The Right
+** of A Main Image Shall Be Given An Additional
+** Column on The Left And Given And Additional Row
+** In Which To Display Its Content
+*/
+@media screen and (max-width: 768px){
+
+  @for $i from 1 through 12 {
+
+    .parallax-container__secondary-content--col-start-#{$i} {
+      grid-column-start: calc(#{$i} - 1);
+    }
+
+    @if ( $i + 1 <= 12) {
+      .parallax-container__secondary-content--col-span-#{$i} {
+        grid-column-end: span calc(#{$i} + 1);
+      }
+    }
+
+    .parallax-container__secondary-content--row-span-#{$i} {
+      // grid-row-end: span calc(#{$i} + 1);
+    }
+  }
+}

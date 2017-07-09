@@ -1,49 +1,17 @@
 
 /* Main Container To House Parallax Content */
 .parallax-container{
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(12, 80px);
-  grid-column-gap: 20px;
-  grid-auto-rows: 50px;
+  display: flex;
 
   &__main-content {
-    grid-row-start: 1;
-
-    @for $i from 1 through 12 {
-      &--row-span-#{$i} {
-        grid-row-end: span #{$i}
-      }
-    }
-
-    /* With Main Content Starting on Left */
-    &--left {
-      grid-column-start: 1;
-
-      @for $i from 1 through 12 {
-        &-col-span-#{$i} {
-          grid-column-end: span #{$i}
-        }
-      }
-    }
-
-    /* With Main Content Starting On Right */
-    &--right{
-      grid-column-end: 13;
-
-      @for $i from 1 through 12 {
-        &-col-span-#{$i} {
-          grid-column-start: calc(13 - #{$i});
-        }
-      }
-    }
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 75%;
   }
 
-  /* Secondary Content Starting On Right May
-  ** Start And Span Any Number. Additionally
-  ** The Container May Be Black With White Text,
+  /* The Container May Be Black With White Text,
   ** or White With Black Text.
-  **/
+  */
   &__secondary-content {
     z-index: 1;
 
@@ -56,25 +24,6 @@
       background: #FFFFFF;
       color: #434343;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-    }
-
-    @for $i from 1 through 12 {
-      &--col-start-#{$i}{
-        grid-column-start: #{$i}
-      }
-
-      &--col-span-#{$i} {
-        grid-column-end: span #{$i};
-      }
-
-      &--row-start-#{$i} {
-        grid-row-start: #{$i}
-      }
-
-      &--row-span-#{$i} {
-        grid-row-end: span #{$i}
-      }
-
     }
   }
 }
