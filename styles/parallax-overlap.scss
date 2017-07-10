@@ -6,10 +6,6 @@
   align-items: flex-end;
   justify-content: center;
 
-  &--section-divider {
-    background: url('section-divider.svg');
-  }
-
   &__main-content {
     flex-grow: 0;
     flex-shrink: 1;
