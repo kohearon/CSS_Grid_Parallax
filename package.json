@@ -19,6 +19,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.12"
+    "browser-sync": "^2.18.12",
+    "gulp-svgmin": "^1.2.4"
   }
 }

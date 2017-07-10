@@ -20,6 +20,7 @@ var gutil = require('gulp-util');
 /* Minification */
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
+var svgmin = require('gulp-svgmin');
 
 gulp.task('styles', function(){
   return gulp.src('index.scss')
@@ -67,7 +68,19 @@ gulp.task('html-watch', ['html'], function (done) {
     done();
 });
 
-gulp.task('default', ['styles', 'scripts','html'], function(){
+gulp.task('svg', function() {
+  return gulp.src('*.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('dist/'))
+});
+
+/* Reload Browser After SVG Changes */
+gulp.task('svg-watch', ['svg'], function(done) {
+  browserSync.reload();
+  done();
+});
+
+gulp.task('default', ['styles', 'scripts','html', 'svg'], function(){
 
   /* Serve Files From The Dist Folder */
   browserSync.init({
@@ -80,5 +93,6 @@ gulp.task('default', ['styles', 'scripts','html'], function(){
   gulp.watch(['styles/*.scss', '*.scss'], ['styles-watch']);
   gulp.watch(['*.js', 'scripts/*.js'], ['scripts-watch']);
   gulp.watch('index.html', ['html-watch']);
+  gulp.watch('*.svg', ['svg-watch']);
 
 });
